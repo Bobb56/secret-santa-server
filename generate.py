@@ -34,7 +34,10 @@ def make_message(index):
 
 results = []
 for i in range(len(names) - 1):
-    results.append(make_message(i))
+    try:
+        results.append(make_message(i))
+    except:
+        pass
     
 shuffle(results)
 

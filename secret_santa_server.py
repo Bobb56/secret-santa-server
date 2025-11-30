@@ -64,6 +64,9 @@ def handle_request(data):
         f = open("result.txt", "r")
         result = eval(f.read())
         f.close()
+        
+        if not (name in result):
+            return "ERROR"
 
         return result[name]
     else:
