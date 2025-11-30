@@ -1,7 +1,7 @@
 import socket
 from rsa import *
 
-HOST = '::'  # écoute sur toutes les interfaces réseau
+HOST = '0.0.0.0'  # écoute sur toutes les interfaces réseau
 PORT = 12345
 
 
@@ -74,7 +74,7 @@ def handle_request(data):
 
 def main():
 
-    with socket.socket(socket.AF_INET6, socket.SOCK_STREAM) as s:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         s.listen()
 
